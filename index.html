@@ -9,23 +9,14 @@
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
   </head>
 
-  <body>
+  <body style='margin: 0; overflow: hidden;'>
     <a-scene
-            vr-mode-ui="enabled: false;"
-            loading-screen="enabled: false;"
-            renderer="logarithmicDepthBuffer: true;"
-            arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
-            id="scene"
-            embedded
-            gesture-detector
-        >
-      <a-text
-        value="This content will always face you."
-        look-at="[gps-camera]"
-        scale="120 120 120"
-        gps-entity-place="latitude: 45.54728240612211; longitude: -73.60900859674656;" gltf-model="./assets/magnemite/scene.gltf" animation-mixer scale="0.15 0.15 0.15"
-      ></a-text>
-      <a-camera gps-camera rotation-reader> </a-camera>
-    </a-scene>
-  </body>
+        vr-mode-ui="enabled: false"
+		embedded
+        arjs='sourceType: webcam; sourceWidth:1280; videoTexture: true; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
+
+        <a-entity gps-entity-place="latitude: 45.54728240612211; longitude: -73.60900859674656;" gltf-model="./assets/magnemite/scene.gltf" rotation="0 0 0" animation-mixer scale="150 150 150"/>
+        <a-camera gps-camera rotation-reader></a-camera>
+	</a-scene>
+</body>
 </html>
